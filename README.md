@@ -1,4 +1,4 @@
-# Multiplos-Clientes-Em-Threading-TCP
+# Múltiplos clientes utilizando de Multi Threading
 Sistema simples de download de arquivos para a demonstração do uso do socketserver em python
 
 ## O que foi usado?
