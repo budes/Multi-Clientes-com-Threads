@@ -23,8 +23,8 @@ mensagem = '-- OPÇÕES ENCONTRADAS -- \n\n'
 arquivos = os.listdir('Teste')
 
 for i_arq in range(len(arquivos)):
-	arq = arquivos[i_arq]
-	mensagem += f'[{i_arq}] ' + str(arq) + '\n'
+    arq = arquivos[i_arq]
+    mensagem += f'[{i_arq}] ' + str(arq) + '\n'
 
 mensagem += '\n' + 'Qual deles deseja baixar? '
 ```
@@ -76,3 +76,47 @@ feito pelo módulo socket e que busca se conectar com o servidor inicialmente cr
 sockobj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sockobj.connect((host, port))
 ```
+
+Recebe a mensagem enviada pelo servidor (`data = sockobj.recv(1024)`) e retorna para que o usuário leia ao colocar 
+ela dentro de uma mensagem de input (após destransformar ela do formato de bytes `msg = data.decode()`).
+
+```
+while True:
+    user = input(msg)
+    try:
+        int(user)
+	assert int(user) < 7
+	break 
+
+    except:
+	print('Valor inválido, tente de novo')
+	print()
+```
+
+Ele faz alguns testes para assegurar que os dados colocados sejam dados adequados, entretanto tentei fazer de um modo
+que ao colocar coisas como Ctrl+Z ele quebrasse, para que caso você execute sem querer, não tenha que fechar o cmd.
+
+Após mandar os dados que o usuário pôs no input `sockobj.send(user.encode())`, tenta receber os dados do arquivo requisitado
+`data = sockobj.recv(2048)` e utiliza desses dados para a recriação desse arquivo, mas dentro da pasta Cliente:
+
+```
+os.chdir('Cliente')
+
+with open(data[0], 'w') as arq:
+    for elemento in data[1]:
+    arq.write(elemento)
+```
+
+A maior sacada feita nessa parte é que o server manda a lista em formato de string, isso foi feito para facilitar a codificação
+e decodificação do data, aí para fazer com que os dados do arquivo eu fiz isso:
+
+```
+data.decode()
+data = eval(data)
+```
+
+logo abaixo ao que recebe o data, facilitando a sua utilização.
+
+# Output e Funcionamento:
+
+
