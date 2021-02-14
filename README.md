@@ -12,10 +12,10 @@ Sistema simples de download de arquivos para a demonstração do uso do socketse
 
 # Como Funciona?
 
- 
-
 ## O lado do servidor
 
+Inicia obtendo os dados da pasta Testes, e elaborando uma mensagem de log que vai ser usada para 
+mostrar as opções ao usuário.
 
 
 ## O lado do cliente
