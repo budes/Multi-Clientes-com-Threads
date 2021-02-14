@@ -119,4 +119,10 @@ logo abaixo ao que recebe o data, facilitando a sua utilização.
 
 # Output e Funcionamento:
 
+![Imagem1](https://github.com/budes/Multiplos-Clientes-Em-Threading-TCP/blob/main/Imagens/1.png)
 
+![Imagem2](https://github.com/budes/Multiplos-Clientes-Em-Threading-TCP/blob/main/Imagens/2.png)
+
+# Aviso
+
+Se for utilizar esse mesmo script no Sublime, não se esqueça de Cancelar a Build quando terminar, se não a porta não para de rodar e você n vai poder reiniciar o server.
