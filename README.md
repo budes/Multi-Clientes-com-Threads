@@ -8,3 +8,14 @@ Sistema simples de download de arquivos para a demonstração do uso do socketse
 • Sublime Text 3
 
 • Módulo socket e socketserver
+
+
+# Como Funciona?
+
+ 
+
+## O lado do servidor
+
+
+
+## O lado do cliente
