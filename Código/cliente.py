@@ -35,8 +35,13 @@ data.decode()
 
 data = eval(data)
 
-os.chdir('Cliente')
-
+try:
+	os.chdir('Cliente')
+except:
+	os.mkdir('Cliente')
+	os.chdir('Cliente')
+	
+	
 with open(data[0], 'w') as arq:
 	for elemento in data[1]:
 		arq.write(elemento)
